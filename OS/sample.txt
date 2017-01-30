@@ -1,0 +1,36 @@
+3yyyyyyyyyy 
+a.out
+cat.cpp
+catS
+catS.cpp
+cli
+cli.cpp
+cliNew
+cliNew.cpp
+cliuser.cpp
+kill
+kill.cpp
+ls
+ls.cpp
+ls-l.cpp
+ps.cpp
+psnew
+psnew.cpp
+psP
+psS
+rm
+rm.cpp
+sample
+sample2.txt
+sample.cpp
+sample.txt
+shel.cpp
+shelIO.cpp
+test.txt
+wc.cpp
+wcS.cpp
+3yyyyyyyyyy 
+  PID TTY          TIME CMD
+11649 pts/12   00:00:00 a.out
+11663 pts/12   00:00:00 ps
+44624 pts/12   00:00:00 bash
