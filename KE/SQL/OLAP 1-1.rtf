@@ -1,0 +1,169 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\lang16393\b\f0\fs24 Q1.  What is the meaning and the output produced by following query?\par
+\tab Select deptno, job, avg(sal) avgsal\par
+\tab From emp\par
+\tab Group by deptno, jobb;\par
+\pard\sa200\sl276\slmult1\lang9\b0\f1\fs22 Ans: Selecting the deptno, job and average of salary labeled as avgsal from 'emp' table grouped based on the deptno and job i.e. all the rows having the same deptno and job are averaged.\par
+DEPTNO               JOB                  AVGSAL                 \par
+-------------------- -------------------- ---------------------- \par
+20                   CLERK               \tab  950                    \par
+10                   PRESIDENT         \tab    5000                   \par
+30                   CLERK               \tab  950                    \par
+30                   MANAGER             \tab  2850                   \par
+30                   SALESMAN           \tab   1400                   \par
+20                   ANALYST             \tab  3000                   \par
+10                   CLERK                \tab 1300                   \par
+20                   MANAGER   \tab 2975                   \par
+10                   MANAGER      \tab 2450                   \par
+\par
+9 rows selected\par
+\par
+\pard 2. \lang16393\b\f0\fs24 Write SQL query to compute average salary for each job and average salary of all job using single SQL select statement. Also write the output returned based on the data given.\par
+\pard\sa200\sl276\slmult1\lang9\b0\f1\fs22 Ans. select jobb, avg(sal) avgsal from emp group by cube(jobb)  \par
+\par
+JOBB                 AVGSAL                 \par
+-------------------- ---------------------- \par
+                     \tab 2073.214285714285714285714285714285714286 \par
+CLERK                1037.5                 \par
+ANALYST              3000                   \par
+MANAGER              2758.333333333333333333333333333333333333 \par
+SALESMAN             1400                   \par
+PRESIDENT            5000                   \par
+\par
+6 rows selected\par
+\par
+\par
+\pard\lang16393\b\f0\fs24 Q4.  Write SQL query to determine average salary of all employees\par
+\b0 Ans:\tab select avg(sal) avgsal from EMP;\par
+\par
+AVGSAL                 \par
+---------------------- \par
+2073.214285714285714285714285714285714286 \par
+\par
+1 rows selected\par
+\par
+\b Q5.  What is the output of following SQL query?\par
+\tab Select job, avg(sal) avgsal from EMP group by cube(job);\par
+\b0 Ans. It gives us average salaray of all jobs and also the average salary of individual jobs respectively in a single sql statement\par
+\par
+\par
+ \tab\tab 2073.214285714285714285714285714285714286\par
+CLERK\tab 1037.5\par
+ANALYST\tab 3000\par
+MANAGER\tab 2758.333333333333333333333333333333333333\par
+SALESMAN\tab 1400\par
+PRESIDENT\tab 5000\par
+\pard\sa200\sl276\slmult1\lang9\f1\fs22\par
+\par
+\par
+\pard\lang16393\b\f0\fs24 Q6.  Compute the answer for the following two queries Query1 and Query2. Are these\par
+\pard\fi720 two queries are equivalent?\par
+Query1: select job, avg(sal) avgsal\par
+\tab    From EMP\par
+\tab    Group by cube(job);\par
+Query2: select job, avg(sal)\par
+\tab     From EMP\par
+\pard\tab\tab     Group by rollup(job);\par
+\par
+Ans.  \b0 Cube(jobb) gives the average of all jobs and average of individual jobs in the order of the table\b  \par
+\pard\sa200\sl276\slmult1\lang9\b0\f1\fs22\par
+\tab 2073.214285714285714285714285714285714286\par
+CLERK\tab 1037.5\par
+ANALYST\tab 3000\par
+MANAGER\tab 2758.333333333333333333333333333333333333\par
+SALESMAN\tab 1400\par
+PRESIDENT\tab 5000\par
+\par
+ANALYST\tab 3000\par
+CLERK\tab 1037.5\par
+MANAGER\tab 2758.333333333333333333333333333333333333\par
+PRESIDENT\tab 5000\par
+SALESMAN\tab 1400\par
+\tab\tab 2073.214285714285714285714285714285714286\par
+\pard\lang16393\b\f0\fs24 Q7.  Compute answer for the following two queries Query1 and Query2. Are these two\par
+\pard\fi720 queries are equivalent?\par
+\par
+Query1: select job, deptno, avg(sal) avgsal  From EMP\par
+\tab\tab Group by rollup(job, deptno);\par
+Query2: select  job, deptno, avg(sal) avgsal  From EMP\par
+\tab\tab Group by cube(job, deptno);\par
+\pard\sa200\sl276\slmult1\lang9\b0\f1\fs22 Ans. Rollup gives the average salary of all the rows combined, average salary of individual jobs and average salary of rows grouped by jobs and deptno combined.\par
+\par
+Cube gives the same as the rollup but also gives the average salaries of individual deptnos\par
+\par
+\par
+JOBB                 DEPTNO               AVGSAL                 \par
+-------------------- -------------------- ---------------------- \par
+CLERK               \tab    10                   1300                   \par
+CLERK                \tab   20                   950                    \par
+CLERK                \tab   30                   950                    \par
+CLERK                 \tab                         1037.5                 \par
+ANALYST           \tab    20                   3000                   \par
+ANALYST           \tab                           3000                   \par
+MANAGER        \tab    10                  2450                   \par
+MANAGER              20                  2975                   \par
+MANAGER              30                  2850                   \par
+MANAGER                                     2758.333333333333333333333333333333333333 \par
+SALESMAN             30                  1400                   \par
+SALESMAN                                    1400                   \par
+PRESIDENT            10                   5000                   \par
+PRESIDENT                                    5000                   \par
+                                         \tab           2073.214285714285714285714285714285714286 \par
+\par
+15 rows selected\par
+\par
+\par
+\par
+JOBB                 DEPTNO               AVGSAL                 \par
+-------------------- -------------------- ---------------------- \par
+                              \tab        2073.214285714285714285714285714285714286 \par
+                     \tab 10                   2916.666666666666666666666666666666666667 \par
+                  \tab 20                   2175                   \par
+                     \tab 30                   1566.666666666666666666666666666666666667 \par
+CLERK                                           1037.5                 \par
+CLERK                \tab 10                   1300                   \par
+CLERK                \tab 20                   950                    \par
+CLERK                \tab 30                   950                    \par
+ANALYST                                     3000                   \par
+ANALYST              20                   3000                   \par
+MANAGER                                   2758.333333333333333333333333333333333333 \par
+MANAGER              10                2450                   \par
+MANAGER              20                2975                   \par
+MANAGER              30                2850                   \par
+SALESMAN                                  1400                   \par
+SALESMAN             30                1400                   \par
+PRESIDENT                                 5000                   \par
+PRESIDENT            10                 5000                   \par
+\par
+18 rows selected\par
+\par
+\par
+\pard\lang16393\b\f0\fs24 Q8. What is the output of the following query?\par
+\pard\fi720 Select BuildingName, Room_no, slot, count(*) from T \par
+group by rollup (BuildingName, room_No, slot);\par
+\pard\sa200\sl276\slmult1\lang9\b0\f1\fs22 Ans. The above query gives the count of rows:\par
+ grouped by buildingname, room_no, slot; \par
+grouped by buldingname, room_no\par
+i.e. cube gives aggregate values all the combinations whereas rollup gives the aggregate values of just the consecutive linear combinations of the group by columns. \par
+\par
+BUILDINGNAME         ROOM_NO              SLOT                 COUNT(*)               \par
+-------------------- -------------------- -------------------- ---------------------- \par
+EE                   \tab\tab 101                  \tab D                    \tab 1                      \par
+EE                   \tab\tab 101                                       \tab 1                      \par
+EE                   \tab\tab 401                  \tab D                    \tab 1                      \par
+EE                  \tab\tab  401                                       \tab 1                      \par
+EE                                                             \tab\tab\tab 2                      \par
+CSE                  \tab\tab 1010                 \tab A                    \tab 1                      \par
+CSE                  \tab\tab 1010                 \tab B                    \tab 1                      \par
+CSE                  \tab\tab 1010                                      \tab 2                      \par
+CSE                                                        \tab\tab\tab 2                      \par
+ECE                  \tab\tab 251                  \tab A                    \tab 1                      \par
+ECE                  \tab\tab 251                                       \tab 1                      \par
+ECE                \tab\tab 252                  \tab C                    \tab 1                      \par
+ECE                  \tab\tab 252                                       \tab 1                      \par
+ECE                                                            \tab\tab\tab 2                      \par
+                                                              \tab\tab  \tab 6                      \par
+15 rows selected\par
+\par
+}
+ 

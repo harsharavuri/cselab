@@ -1,0 +1,3 @@
+The name of the country is india and its respective capital is delhi 
+The name of the country is germany and its respective capital is berlin 
+The name of the country is usa and its respective capital is washington 

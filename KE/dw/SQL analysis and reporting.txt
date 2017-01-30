@@ -1,0 +1,161 @@
+select ename, job, deptno, salary, rank() over (order by salary desc) as salary_rank from emp;
+
+ENAME                JOBB                 DEPTNO               SAL                    SALARY_RANK            
+-------------------- -------------------- -------------------- ---------------------- ---------------------- 
+KING                 PRESIDENT            10                   5000                   1                      
+FORD                 ANALYST              20                   3000                   2                      
+SCOTT                ANALYST              20                   3000                   2                      
+JONES                MANAGER              20                   2975                   4                      
+BLAKE                MANAGER              30                   2850                   5                      
+CLARK                MANAGER              10                   2450                   6                      
+ALLEN                SALESMAN             30                   1600                   7                      
+TURNER               SALESMAN             30                   1500                   8                      
+MILLER               CLERK                10                   1300                   9                      
+WARD                 SALESMAN             30                   1250                   10                     
+MARTIN               SALESMAN             30                   1250                   10                     
+ADAM                 CLERK                20                   1100                   12                     
+JAMES                CLERK                30                   950                    13                     
+SMITH                CLERK                20                   800                    14                     
+
+14 rows selected
+
+
+
+
+select ename, job, deptno, salary, rank() over (order by deptno asc,  salary desc) as salary_rank from emp;
+
+
+ENAME                JOBB                 DEPTNO               SAL                    SALARY_RANK            
+-------------------- -------------------- -------------------- ---------------------- ---------------------- 
+KING                 PRESIDENT            10                   5000                   1                      
+CLARK                MANAGER              10                   2450                   2                      
+MILLER               CLERK                10                   1300                   3                      
+SCOTT                ANALYST              20                   3000                   4                      
+FORD                 ANALYST              20                   3000                   4                      
+JONES                MANAGER              20                   2975                   6                      
+ADAM                 CLERK                20                   1100                   7                      
+SMITH                CLERK                20                   800                    8                      
+BLAKE                MANAGER              30                   2850                   9                      
+ALLEN                SALESMAN             30                   1600                   10                     
+TURNER               SALESMAN             30                   1500                   11                     
+MARTIN               SALESMAN             30                   1250                   12                     
+WARD                 SALESMAN             30                   1250                   12                     
+JAMES                CLERK                30                   950                    14                     
+
+14 rows selected
+
+
+select ename, job, deptno, salary, dense_rank() over (order by salary desc) as salary_rank from emp;
+
+
+ENAME                JOBB                 DEPTNO               SAL                    SALARY_RANK            
+-------------------- -------------------- -------------------- ---------------------- ---------------------- 
+KING                 PRESIDENT            10                   5000                   1                      
+FORD                 ANALYST              20                   3000                   2                      
+SCOTT                ANALYST              20                   3000                   2                      
+JONES                MANAGER              20                   2975                   3                      
+BLAKE                MANAGER              30                   2850                   4                      
+CLARK                MANAGER              10                   2450                   5                      
+ALLEN                SALESMAN             30                   1600                   6                      
+TURNER               SALESMAN             30                   1500                   7                      
+MILLER               CLERK                10                   1300                   8                      
+WARD                 SALESMAN             30                   1250                   9                      
+MARTIN               SALESMAN             30                   1250                   9                      
+ADAM                 CLERK                20                   1100                   10                     
+JAMES                CLERK                30                   950                    11                     
+SMITH                CLERK                20                   800                    12                     
+
+14 rows selected
+
+
+select ename, jobb, deptno, sal, rank() over (partition by deptno order by sal desc) as salary_rank from emp;
+
+ENAME                JOBB                  DEPTNO                 SAL                 SALARY_RANK            
+-------------------- -------------------- ---------------------- ---------------------- ---------------------- 
+KING                 PRESIDENT            10                     5000                   1                      
+CLARK                MANAGER              10                     2450                   2                      
+MILLER               CLERK                10                     1300                   3                      
+SCOTT                ANALYST              20                     3000                   1                      
+FORD                 ANALYST              20                     3000                   1                      
+JONES                MANAGER              20                     2975                   3                      
+ADAM                 CLERK                20                     1100                   4                      
+SMITH                CLERK                20                     800                    5                      
+BLAKE                MANAGER              30                     2850                   1                      
+ALLEN                SALESMAN             30                     1600                   2                      
+TURNER               SALESMAN             30                     1500                   3                      
+MARTIN               SALESMAN             30                     1250                   4                      
+WARD                 SALESMAN             30                     1250                   4                      
+JAMES                CLERK                30                     950                    6                      
+
+14 rows selected
+
+
+select ename, jobb, deptno, sal, row_number() over (order by sal desc) as salary_row from emp;
+
+
+ENAME                JOBB                  DEPTNO                 SAL                 SALARY_ROW             
+-------------------- -------------------- ---------------------- ---------------------- ---------------------- 
+KING                 PRESIDENT            10                     5000                   1                      
+FORD                 ANALYST              20                     3000                   2                      
+SCOTT                ANALYST              20                     3000                   3                      
+JONES                MANAGER              20                     2975                   4                      
+BLAKE                MANAGER              30                     2850                   5                      
+CLARK                MANAGER              10                     2450                   6                      
+ALLEN                SALESMAN             30                     1600                   7                      
+TURNER               SALESMAN             30                     1500                   8                      
+MILLER               CLERK                10                     1300                   9                      
+WARD                 SALESMAN             30                     1250                   10                     
+MARTIN               SALESMAN             30                     1250                   11                     
+ADAM                 CLERK                20                     1100                   12                     
+JAMES                CLERK                30                     950                    13                     
+SMITH                CLERK                20                     800                    14                     
+
+14 rows selected
+
+
+select ename, jobb, deptno, sal, sum(sal) over (partition by deptno order by sal rows unbounded preceding) as cum_salary from emp;
+
+
+ENAME                JOB                  DEPTNO                 SALARY                 CUM_SALARY             
+-------------------- -------------------- ---------------------- ---------------------- ---------------------- 
+MILLER               CLERK                10                     1300                   1300                   
+CLARK                MANAGER              10                     2450                   3750                   
+KING                 PRESIDENT            10                     5000                   8750                   
+SMITH                CLERK                20                     800                    800                    
+ADAM                 CLERK                20                     1100                   1900                   
+JONES                MANAGER              20                     2975                   4875                   
+SCOTT                ANALYST              20                     3000                   7875                   
+FORD                 ANALYST              20                     3000                   10875                  
+JAMES                CLERK                30                     950                    950                    
+MARTIN               SALESMAN             30                     1250                   2200                   
+WARD                 SALESMAN             30                     1250                   3450                   
+TURNER               SALESMAN             30                     1500                   4950                   
+ALLEN                SALESMAN             30                     1600                   6550                   
+BLAKE                MANAGER              30                     2850                   9400                   
+
+14 rows selected
+
+
+select ename, jobb, deptno, sal, avg(sal) over (partition by deptno order by sal rows 2 preceding) as avg_3_salary from emp;
+
+
+ENAME                JOB                  DEPTNO                 SALARY                 AVG_3_SALARY           
+-------------------- -------------------- ---------------------- ---------------------- ---------------------- 
+MILLER               CLERK                10                     1300                   1300                   
+CLARK                MANAGER              10                     2450                   1875                   
+KING                 PRESIDENT            10                     5000                   2916.666666666666666666666666666666666667 
+SMITH                CLERK                20                     800                    800                    
+ADAM                 CLERK                20                     1100                   950                    
+JONES                MANAGER              20                     2975                   1625                   
+SCOTT                ANALYST              20                     3000                   2358.333333333333333333333333333333333333 
+FORD                 ANALYST              20                     3000                   2991.666666666666666666666666666666666667 
+JAMES                CLERK                30                     950                    950                    
+MARTIN               SALESMAN             30                     1250                   1100                   
+WARD                 SALESMAN             30                     1250                   1150                   
+TURNER               SALESMAN             30                     1500                   1333.333333333333333333333333333333333333 
+ALLEN                SALESMAN             30                     1600                   1450                   
+BLAKE                MANAGER              30                     2850                   1983.333333333333333333333333333333333333 
+
+14 rows selected
+
+
