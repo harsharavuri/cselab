@@ -359,8 +359,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 7
-#define YY_END_OF_BUFFER 8
+#define YY_NUM_RULES 5
+#define YY_END_OF_BUFFER 6
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -370,26 +370,26 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[16] =
     {   0,
-        0,    0,    8,    5,    5,    6,    1,    3,    2,    4,
-        1,    3,    2,    4,    0
+        0,    0,    6,    5,    4,    1,    3,    0,    1,    0,
+        3,    2,    0,    2,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
-        1,    1,    1,    1,    5,    6,    6,    6,    5,    6,
-        6,    6,    5,    6,    6,    6,    6,    6,    5,    6,
-        6,    6,    6,    6,    5,    6,    4,    6,    4,    6,
-        1,    1,    1,    1,    1,    1,    5,    6,    6,    6,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    2,    1,    1,
+        1,    1,    3,    2,    4,    5,    1,    6,    6,    6,
+        6,    6,    6,    6,    6,    6,    6,    1,    2,    2,
+        2,    2,    1,    1,    7,    7,    7,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
 
-        5,    6,    6,    6,    5,    6,    6,    6,    6,    6,
-        5,    6,    6,    6,    6,    6,    5,    6,    4,    6,
-        4,    6,    1,    1,    1,    1,    1,    1,    1,    1,
+        8,    7,    7,    7,    7,    7,    7,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
+        7,    7,    1,    2,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -406,35 +406,35 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int32_t yy_meta[7] =
+static yyconst flex_int32_t yy_meta[9] =
     {   0,
-        1,    1,    1,    2,    2,    2
+        1,    1,    1,    1,    1,    2,    2,    2
     } ;
 
-static yyconst flex_int16_t yy_base[21] =
+static yyconst flex_int16_t yy_base[17] =
     {   0,
-        0,    3,   18,   19,    5,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,   19,   11,   15,   14,   13,   12
+        0,    0,   21,   22,   22,    4,    0,   14,    0,   10,
+        0,   11,   12,    9,   22,    9
     } ;
 
-static yyconst flex_int16_t yy_def[21] =
+static yyconst flex_int16_t yy_def[17] =
     {   0,
-       16,   15,   15,   15,   15,    5,   17,   18,   19,   20,
-       17,   18,   19,   20,    0,   15,   15,   15,   15,   15
+       15,    1,   15,   15,   15,   15,   16,   15,    6,   15,
+       16,   15,   15,   15,    0,   15
     } ;
 
-static yyconst flex_int16_t yy_nxt[26] =
+static yyconst flex_int16_t yy_nxt[31] =
     {   0,
-       15,    5,    6,    4,    5,    6,    4,    7,    8,    9,
-       10,    4,    4,   14,   13,   12,   11,   15,    3,   15,
-       15,   15,   15,   15,   15
+        4,    5,    5,    5,    4,    6,    7,    7,    8,    9,
+       11,   10,   13,   13,   14,   14,   12,   14,   10,   12,
+       15,    3,   15,   15,   15,   15,   15,   15,   15,   15
     } ;
 
-static yyconst flex_int16_t yy_chk[26] =
+static yyconst flex_int16_t yy_chk[31] =
     {   0,
-        0,    1,    1,    2,    2,    2,    2,    2,    2,    5,
-        5,   16,   16,   20,   19,   18,   17,    3,   15,   15,
-       15,   15,   15,   15,   15
+        1,    1,    1,    1,    1,    1,    1,    1,    6,    6,
+       16,    6,   10,   10,   14,   10,   12,   13,   12,    8,
+        3,   15,   15,   15,   15,   15,   15,   15,   15,   15
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -451,13 +451,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "a53.l"
-#line 5 "a53.l"
+#line 1 "a51.l"
+#line 3 "a51.l"
 #include <stdio.h>
-#include <string.h>
-#define buffsize 200
-char buff[buffsize];
-#line 461 "lex.yy.c"
+int integers=0, floating=0, identifiers=0, operators=0; 
+
+#line 460 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -629,9 +628,6 @@ extern int yylex (void);
 #endif
 
 #define YY_RULE_SETUP \
-	if ( yyleng > 0 ) \
-		YY_CURRENT_BUFFER_LVALUE->yy_at_bol = \
-				(yytext[yyleng - 1] == '\n'); \
 	YY_USER_ACTION
 
 /** The main scanner function which does all the work.
@@ -642,12 +638,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 11 "a53.l"
+#line 9 "a51.l"
 
 
-
-
-#line 651 "lex.yy.c"
+#line 645 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -688,7 +682,6 @@ YY_DECL
 		yy_bp = yy_cp;
 
 		yy_current_state = (yy_start);
-		yy_current_state += YY_AT_BOL();
 yy_match:
 		do
 			{
@@ -707,7 +700,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 19 );
+		while ( yy_base[yy_current_state] != 22 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -733,70 +726,43 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 15 "a53.l"
+#line 11 "a51.l"
 {
-				strcpy(buff,yytext);
-				char fc = '\0';
-				strcat(buff,"ay");
-				printf("%s", buff);
-			};
+
+	printf("Integer ");
+	integers++;
+}
 	YY_BREAK
 case 2:
-/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 23 "a53.l"
+#line 17 "a51.l"
 {
-				strcpy(buff,yytext);
-				char fc = '\0';
-				
-				fc = buff[0];
-				strcat(buff,"ay");
-				printf("%c%s", fc, &buff[1]);
-			};			
+	printf("Floating point number ");
+	floating++;
+}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 32 "a53.l"
+#line 22 "a51.l"
 {
-				strcpy(buff,yytext);
-				char fc = '\0';
-				buff[yyleng] = buff[0];
-				buff[yyleng+1] = '\0';
-				strcat(buff,"ay");
-				printf("%s",&buff[1]);
-			};
+	printf("identifiers ");
+	identifiers++;
+}
 	YY_BREAK
 case 4:
-/* rule 4 can match eol */
 YY_RULE_SETUP
-#line 41 "a53.l"
+#line 27 "a51.l"
 {
-				strcpy(buff,yytext);
-				char fc = '\0';
-				fc = buff[0];
-				buff[yyleng] = buff[1];
-				buff[yyleng+1] = '\0';
-				strcat(buff,"ay");
-				printf("%c%s",fc,&buff[2]);
-			};
+	printf("Operators ");
+	operators++;
+}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 53 "a53.l"
-printf("%s",yytext);
-	YY_BREAK
-case 6:
-/* rule 6 can match eol */
-YY_RULE_SETUP
-#line 55 "a53.l"
-printf("\n");
-	YY_BREAK
-case 7:
-YY_RULE_SETUP
-#line 57 "a53.l"
+#line 33 "a51.l"
 ECHO;
 	YY_BREAK
-#line 800 "lex.yy.c"
+#line 766 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1076,7 +1042,6 @@ static int yy_get_next_buffer (void)
 	register char *yy_cp;
     
 	yy_current_state = (yy_start);
-	yy_current_state += YY_AT_BOL();
 
 	for ( yy_cp = (yytext_ptr) + YY_MORE_ADJ; yy_cp < (yy_c_buf_p); ++yy_cp )
 		{
@@ -1232,8 +1197,6 @@ static int yy_get_next_buffer (void)
 	c = *(unsigned char *) (yy_c_buf_p);	/* cast for 8-bit char's */
 	*(yy_c_buf_p) = '\0';	/* preserve yytext */
 	(yy_hold_char) = *++(yy_c_buf_p);
-
-	YY_CURRENT_BUFFER_LVALUE->yy_at_bol = (c == '\n');
 
 	return c;
 }
@@ -1797,15 +1760,19 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 57 "a53.l"
+#line 33 "a51.l"
 
 
-int yywrap()
-{
+
+int yywrap(){
 	return 1;
 }
-int main(int argc, char const *argv[])
-{
+
+int main(){
+	printf("Enter text");
 	yylex();
+	printf("%d integers, %d operators, %d identifiers, %d floating", integers, operators, identifiers, floating);
+	printf("Total: %d", operators+identifiers+integers+floating);
 	return 0;
 }
+

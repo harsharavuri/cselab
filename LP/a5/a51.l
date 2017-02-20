@@ -10,22 +10,22 @@ int integers=0, floating=0, identifiers=0, operators=0;
 
 [0-9]+	{
 
-	printf("Integer");
+	printf("Integer ");
 	integers++;
 }
 
 ([0-9]+(\.[0-9]+)?(e("+"|"-")?[0-9]+)?)	{
-	printf("Floating point number");
+	printf("Floating point number ");
 	floating++;
 }
 
 (([a-zA-z_])([0-9a-zA-z_])*)	{
-	printf("identifiers");
+	printf("identifiers ");
 	identifiers++;
 }
 
 [\|&><,;\-\+=]	{
-	printf("Operators");
+	printf("Operators ");
 	operators++;
 }
 
@@ -39,6 +39,7 @@ int yywrap(){
 int main(){
 	printf("Enter text");
 	yylex();
-	printf("%d %d %d %d", integers, operators, identifiers, floating);
+	printf("%d integers, %d operators, %d identifiers, %d floating", integers, operators, identifiers, floating);
+	printf("Total: %d", operators+identifiers+integers+floating);
 	return 0;
 }

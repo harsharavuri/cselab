@@ -62,5 +62,6 @@ int yywrap()
 int main(int argc, char const *argv[])
 {
 	yylex();
+	//execvp("./a53", NULL);
 	return 0;
 }
